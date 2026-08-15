@@ -1,0 +1,31 @@
+
+  [39;41;1m FAIL [39;49;22m[39m Tests\Feature\RelationshipOrWhereTest[39m
+  [32;1m✓[39;22m[90m [39m[90mpublished posts of the target user are visible[39m[90m                      [39m [90m0.12s[39m  
+  [31;1m⨯[39;22m[90m [39m[90mfeatured posts of other users are not visible[39m[90m                       [39m [90m0.01s[39m  
+  [31m────────────────────────────────────────────────────────────────────────────[39m  
+  [41;1m FAILED [49;22m [1mTests\Feature\RelationshipOrWhereTest[22m [90m>[39m featured posts of other u…   
+[39;1m  関連クエリのOR条件によって別ユーザーの注目投稿が混入してはならない
+Failed asserting that two arrays are identical.
+  [39;22m[32m Array &0 [[39m[39;1m
+  [39;22m[32m     0 => 1,[39m[39;1m
+  [39;22m[32m+    1 => 2,[39m[39;1m
+  [39;22m[32m ][39m[39;1m
+  [39;22m
+
+  at [32mtests/Feature/RelationshipOrWhereTest.php[39m:[32m69[39m
+     65▕         ]);
+     66▕ 
+     67▕         $actualIds = app(VisiblePostFinder::class)->findFor($owner)->pluck('id')->all();
+     68▕ 
+  ➜  69▕         self::assertSame(
+     70▕             [$ownDraft->id],
+     71▕             $actualIds,
+     72▕             '関連クエリのOR条件によって別ユーザーの注目投稿が混入してはならない'
+     73▕         );
+
+  [33m1   [39m[39;1mtests/Feature/RelationshipOrWhereTest.php[39;22m:[39;1m69[39;22m
+
+
+  [90mTests:[39m    [31;1m1 failed[39;22m[90m,[39m[39m [39m[32;1m1 passed[39;22m[90m (2 assertions)[39m
+  [90mDuration:[39m [39m0.23s[39m
+
