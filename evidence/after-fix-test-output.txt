@@ -1,0 +1,8 @@
+
+  [30;42;1m PASS [39;49;22m[39m Tests\Feature\RelationshipOrWhereTest[39m
+  [32;1m✓[39;22m[90m [39m[90mpublished posts of the target user are visible[39m[90m                      [39m [90m0.12s[39m  
+  [32;1m✓[39;22m[90m [39m[90mfeatured posts of other users are not visible[39m[90m                       [39m [90m0.01s[39m  
+
+  [90mTests:[39m    [32;1m2 passed[39;22m[90m (3 assertions)[39m
+  [90mDuration:[39m [39m0.23s[39m
+

@@ -13,8 +13,10 @@ final class VisiblePostFinder
     public function findFor(WorkspaceUser $user): Collection
     {
         return $user->posts()
-            ->where('status', 'published')
-            ->orWhere('featured', true)
+            ->where(static function ($query): void {
+                $query->where('status', 'published')
+                    ->orWhere('featured', true);
+            })
             ->orderBy('id')
             ->get();
     }
